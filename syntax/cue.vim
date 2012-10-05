@@ -1,3 +1,7 @@
+" Vim syntax file
+" Language: cue
+"
+
 if exists("b:current_syntax")
     finish
 endif
