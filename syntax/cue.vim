@@ -7,18 +7,18 @@ if exists("b:current_syntax")
 endif
 
 syn case ignore
-syn keyword keywords
+syn keyword cueKeywords
       \ CATALOG CDTEXTFILE FILE FLAGS INDEX ISRC PERFORMER POSTGAP
       \ PREGAP SONGWRITER TITLE TRACK
-syn region name start=+"+  skip=+\\"+  end=+"+
-syn match rem /\<REM\ .*$/
-syn match num /[0-9][0-9]*/
-syn match time /[0-9][0-9]*\:[0-9:]*/
+syn region cueString start=+"+  skip=+\\"+  end=+"+
+syn match cueComment /\<REM\ .*$/
+syn match cueNumber /[0-9][0-9]*/
+syn match cueTime /[0-9][0-9]*\:[0-9:]*/
 
-hi def link keywords Statement
-hi def link name     String
-hi def link rem      Comment
-hi def link num      Number
-hi def link time     float
+hi def link cueKeywords Statement
+hi def link cueString   String
+hi def link cueComment  Comment
+hi def link cueNumber   Number
+hi def link cueTime     Float
 
 let b:current_syntax = "cue"
