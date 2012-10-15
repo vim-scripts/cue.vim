@@ -7,7 +7,9 @@ if exists("b:current_syntax")
 endif
 
 syntax case ignore
-syntax keyword keywords CATALOG CDTEXTFILE FILE FLAGS INDEX ISRC PERFORMER POSTGAP PREGAP SONGWRITER TITLE TRACK
+syntax keyword keywords
+      \ CATALOG CDTEXTFILE FILE FLAGS INDEX ISRC PERFORMER POSTGAP
+      \ PREGAP SONGWRITER TITLE TRACK
 syntax region name start=+"+  skip=+\\"+  end=+"+
 syntax match rem /\<REM\ .*$/
 syntax match num /[0-9][0-9]*/
