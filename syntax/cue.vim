@@ -1,15 +1,24 @@
-syntax case ignore
-syntax keyword keywords CATALOG CDTEXTFILE FILE FLAGS INDEX ISRC PERFORMER POSTGAP PREGAP SONGWRITER TITLE TRACK
-syntax region name start=+"+  skip=+\\"+  end=+"+
-syntax match rem /\<REM\ .*$/
-syntax match num /[0-9][0-9]*/
-syntax match time /[0-9][0-9]*\:[0-9:]*/
+" Vim syntax file
+" Language: cue
+"
 
-highlight link keywords Statement
-highlight link name     String
-highlight link rem      Comment
-highlight link num      Number
-highlight link time     float
+if exists("b:current_syntax")
+    finish
+endif
 
+syn case ignore
+syn keyword cueKeywords
+      \ CATALOG CDTEXTFILE FILE FLAGS INDEX ISRC PERFORMER POSTGAP
+      \ PREGAP SONGWRITER TITLE TRACK
+syn region cueString start=+"+  skip=+\\"+  end=+"+
+syn match cueComment /\<REM\ .*$/
+syn match cueNumber /[0-9][0-9]*/
+syn match cueTime /[0-9][0-9]*\:[0-9:]*/
 
+hi def link cueKeywords Statement
+hi def link cueString   String
+hi def link cueComment  Comment
+hi def link cueNumber   Number
+hi def link cueTime     Float
 
+let b:current_syntax = "cue"
