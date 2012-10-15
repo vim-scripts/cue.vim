@@ -15,10 +15,10 @@ syn match rem /\<REM\ .*$/
 syn match num /[0-9][0-9]*/
 syn match time /[0-9][0-9]*\:[0-9:]*/
 
-hi link keywords Statement
-hi link name     String
-hi link rem      Comment
-hi link num      Number
-hi link time     float
+hi def link keywords Statement
+hi def link name     String
+hi def link rem      Comment
+hi def link num      Number
+hi def link time     float
 
 let b:current_syntax = "cue"
